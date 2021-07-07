@@ -10,7 +10,9 @@ void disabled() {}
 
 void competition_initialize() {}
 
-void autonomous() {}
+void autonomous() {
+	driveLeftBack.move(50); //plug into port12
+}
 
 void opcontrol() {
 
