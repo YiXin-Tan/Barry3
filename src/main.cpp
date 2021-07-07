@@ -1,5 +1,7 @@
 #include "main.h"
 
+//test comment
+
 void initialize() {
 	pros::lcd::initialize();
 	pros::lcd::set_text(1, "G'day!");
