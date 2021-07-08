@@ -1,12 +1,9 @@
 #include "main.h"
 
-//test comment
-//test comment2
-//another test comment
-
 void initialize() {
 	pros::lcd::initialize();
-	pros::lcd::set_text(1, "G'day!");
+	pros::lcd::set_text(1, "G'day! Uploaded via controller");
+	printf("G'day!\n");
 	autonomous();
 }
 
@@ -15,9 +12,14 @@ void disabled() {}
 void competition_initialize() {}
 
 void autonomous() {
-	driveLeftBack.move(50); //plug into port12
+	printf("Running autonomous\n");
+	pros::delay(2000);
+	//driveLeftBack.move(50); //plug into port12
 }
 
 void opcontrol() {
-
+	while(true){
+		sense_lift_angle();
+		pros::delay(100);
+	}
 }

@@ -77,6 +77,7 @@ void opcontrol(void);
  */
 #include "subsystemHeaders/drive.hpp"
 #include "subsystemHeaders/globals.hpp"
+#include "subsystemHeaders/lift.hpp"
 //#include <iostream>
 #endif
 
