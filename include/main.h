@@ -75,6 +75,9 @@ void opcontrol(void);
 /**
  * You can add C++-only headers here
  */
+#include "subsystemHeaders/drive.hpp"
+#include "subsystemHeaders/globals.hpp"
+#include "subsystemHeaders/lift.hpp"
 //#include <iostream>
 #endif
 
