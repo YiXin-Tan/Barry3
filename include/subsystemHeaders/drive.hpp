@@ -10,6 +10,7 @@ double getAveragePosition();
 
 //DRIVER CONTROL (DECLARATION)
 void controlSetDrive();
+void controlSetDrive2();
 
 //AUTONOMOUS CONTROL (DECLARATION)
 void translate(int units, int voltage);

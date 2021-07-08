@@ -42,6 +42,27 @@ void controlSetDrive(){
   setDriveMotor(drivePower, driveTurn);
 }
 
+//DRIVER CONTROL SET 2 (definition)
+void controlSetDrive2(){
+  int drivePowerRight = master.get_analog(ANALOG_RIGHT_Y);
+  int driveTurnRight = master.get_analog(ANALOG_RIGHT_X);
+  int drivePowerLeft = master.get_analog(ANALOG_LEFT_Y);
+  int driveTurnLeft = master.get_analog(ANALOG_LEFT_X);
+  if(abs(drivePowerRight) < 10) // Right power=0 if joystick analog val too small
+    drivePowerRight = 0;
+  if(abs(driveTurnRight) < 10) // Right turn=0 if joystick analog val too small
+    driveTurnRight = 0;
+  if(abs(driveTurnLeft) < 10) //Left turn=0 if joystick analog val too small
+    driveTurnLeft=0;
+  if(abs(drivePowerLeft)<10) //Left power=0 if joystick analog val too small
+    drivePowerLeft=0;
+  printf("RP%d RT%d \n", drivePowerRight, driveTurnRight);
+  printf("LP%d LT%d \n", drivePowerLeft, driveTurnLeft);
+
+  leftDriveMotor(drivePowerLeft + driveTurnLeft);
+  rightDriveMotor(drivePowerRight + driveTurnRight);
+}
+
 //AUTONOMOUS CONTROL (DEFINITION)
 void translate(int units, int voltage){
   int direction = abs(units) / units;
