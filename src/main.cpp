@@ -19,7 +19,7 @@ void autonomous() {
 
 void opcontrol() {
 	while(true){
-		controlSetDrive();
+		controlSetDrive2();
 		int c = controlSetMiniLift();
 		int b = controlSetLift();
 		int a = sense_lift_angle();
