@@ -32,7 +32,7 @@ double getAveragePosition(){
 
 //DRIVER CONTROL (DEFINION)
 void controlSetDrive(){
-  int drivePower = master.get_analog(ANALOG_LEFT_Y);
+  int drivePower = master.get_analog(ANALOG_RIGHT_Y);
   int driveTurn = master.get_analog(ANALOG_RIGHT_X);
   if(abs(drivePower) < 10) // power=0 if joystick analog val too small
     drivePower = 0;
