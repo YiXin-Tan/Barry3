@@ -19,7 +19,8 @@ void autonomous() {
 
 void opcontrol() {
 	while(true){
-		sense_lift_angle();
+		int a = sense_lift_angle();
+		pros::lcd::print(0, "angle:%d", a);
 		pros::delay(100);
 	}
 }
