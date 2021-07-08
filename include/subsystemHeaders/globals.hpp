@@ -7,6 +7,7 @@ extern pros::Motor driveRightFront;
 extern pros::Motor driveRightBack;
 extern pros::Motor claw; //not in use
 extern pros::Motor lift;
+extern pros::Motor mini_lift;
 
 //CONTROLER OBJECT DECLARATION
 extern pros::Controller master;
@@ -21,6 +22,12 @@ extern pros::ADIDigitalIn button;
 #define MTR_RIGHT_FRONT_PORT 18
 #define MTR_RIGHT_BACK_PORT 17
 #define MTR_CLAW_PORT 1 //not in use
-#define MTR_LIFT_PORT 2
+#define MTR_LIFT_PORT 16
+#define MTR_MINI_LIFT_PORT 3
 #define SENSOR_POTENTIOMETER_PORT 'A'
 #define SENSOR_BUTTON_PORT 'C'
+#define toggle_Lift_Button DIGITAL_R1
+#define toggle_MiniLift_Button DIGITAL_R2
+
+extern int lift_state;
+extern int mini_lift_state;
