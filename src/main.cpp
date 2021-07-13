@@ -3,7 +3,6 @@
 void initialize() {
 	pros::lcd::initialize();
 	pros::lcd::set_text(1, "G'day! Uploaded via controller");
-	printf("G'day!\n");
 	autonomous();
 }
 
@@ -19,7 +18,7 @@ void autonomous() {
 
 void opcontrol() {
 	while(true){
-		controlSetDrive2();
+		controlSetDrive();
 		int c = controlSetMiniLift();
 		int b = controlSetLift();
 		int a = sense_lift_angle();

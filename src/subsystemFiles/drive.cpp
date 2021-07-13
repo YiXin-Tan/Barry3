@@ -4,6 +4,7 @@
 void leftDriveMotor(int i){
   driveLeftFront.move(i);
   driveLeftBack.move(i);
+  pros::lcd::print(5, "i%d", i);
 }
 
 void rightDriveMotor(int i){
@@ -38,6 +39,8 @@ void controlSetDrive(){
     drivePower = 0;
   if(abs(driveTurn) < 10) // turn=0 if joystick analog val too small
     driveTurn = 0;
+  pros::lcd::print(4, "P%d T%d \n", drivePower, driveTurn);
+
   printf("P%d T%d \n", drivePower, driveTurn);
   setDriveMotor(drivePower, driveTurn);
 }
