@@ -41,8 +41,10 @@ void controlSetDrive(){
     driveTurn = 0;
   pros::lcd::print(4, "P%d T%d \n", drivePower, driveTurn);
 
-  printf("P%d T%d \n", drivePower, driveTurn);
+  printf("P%d T%d", drivePower, driveTurn);
+  printf("M1%d", driveLeftBack.get_position());
   setDriveMotor(drivePower, driveTurn);
+  //setDriveMotor(drivePower, 0);
 }
 
 //DRIVER CONTROL SET 2 (definition)
