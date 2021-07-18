@@ -5,6 +5,10 @@ void leftDriveMotor(int i);
 void rightDriveMotor(int i);
 void setDriveMotor(int power, int turn);
 
+void accelerate(int targetPower, int turn);
+void accelerate2(int targetPower, int currentPower,int lr);
+void brake();
+
 void resetDriveEncoders();
 double getAveragePosition();
 
