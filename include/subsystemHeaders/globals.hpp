@@ -28,6 +28,13 @@ extern pros::ADIDigitalIn button;
 #define SENSOR_BUTTON_PORT 'C'
 #define toggle_Lift_Button DIGITAL_R1
 #define toggle_MiniLift_Button DIGITAL_L1
+#define toggle_control_button 'D'
+#define brake_button 'B'
+#define incrementSensButton DIGITAL_R2
+#define decrementSensButton DIGITAL_L2
 
 extern int lift_state;
 extern int mini_lift_state;
+extern bool inFunc;
+extern int sensitivity;
+extern int controlState;

@@ -19,3 +19,6 @@ pros::ADIDigitalIn button(SENSOR_BUTTON_PORT);
 
 int lift_state = -1;
 int mini_lift_state = -1;
+bool inFunc=false;
+int sensitivity=10;
+int controlState=1;

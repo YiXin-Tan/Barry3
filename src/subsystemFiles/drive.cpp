@@ -1,5 +1,19 @@
 #include "main.h"
 
+int changeSens(){
+  if(master.get_digital_new_press(decrementSensButton)){
+    if(sensitivity-1 != 0){
+      sensitivity--;
+      return(sensitivity);
+    }
+  }
+  if(master.get_digital_new_press(incrementSensButton)){
+    sensitivity++;
+    return(sensitivity);
+  }
+  return(0); //unsure?
+}
+
 //HELPER FUNCTIONS (DEFINITION)
 void leftDriveMotor(int i){
   driveLeftFront.move(i);
@@ -42,7 +56,7 @@ void controlSetDrive(){
   pros::lcd::print(4, "P%d T%d \n", drivePower, driveTurn);
 
   printf("P%d T%d", drivePower, driveTurn);
-  printf("M1%d", driveLeftBack.get_position());
+  //printf("M1%d", driveLeftBack.get_position());
   setDriveMotor(drivePower, driveTurn);
   //setDriveMotor(drivePower, 0);
 }

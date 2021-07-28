@@ -18,3 +18,7 @@ void controlSetDrive2();
 
 //AUTONOMOUS CONTROL (DECLARATION)
 void translate(int units, int voltage);
+
+//MISCELANIOUS FUNCTIONS (DECLARATION)
+int changeSens();
+void brake();
