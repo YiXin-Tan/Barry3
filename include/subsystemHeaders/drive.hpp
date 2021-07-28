@@ -21,4 +21,3 @@ void translate(int units, int voltage);
 
 //MISCELANIOUS FUNCTIONS (DECLARATION)
 int changeSens();
-void brake();

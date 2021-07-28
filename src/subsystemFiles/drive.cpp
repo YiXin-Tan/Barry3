@@ -45,6 +45,52 @@ double getAveragePosition(){
               driveRightBack.get_position()) / 4;
 }
 
+//Slowly increments power for which the motors will move at
+void accelerate(int targetPower, int turn){
+  inFunc=true;
+  while(inFunc==true){
+    for(int i= previousTurn + driveRightFront.get_power();i<targetPower;i=i+sensitivity){
+      setDriveMotor(i,turn);
+      inFunc=false;
+    }
+    for(int i= previousTurn+ driveRightFront.get_power();i>targetPower;i=i-sensitivity){
+      setDriveMotor(i,turn);
+      inFunc=false;
+    }
+  }
+  }
+
+void accelerate2(int targetPower, int currentPower, int lr){
+  inFunc=true;
+  while(inFunc==true){
+    for(int i = currentPower; i < targetPower; i=i+sensitivity){
+      if(lr==1){
+        leftDriveMotor(i);
+      }else{
+        rightDriveMotor(i);
+      }
+    }
+    for(int i = currentPower; i > targetPower; i=i-sensitivity){
+        if(lr==1){
+          leftDriveMotor(i);
+        }else{
+          rightDriveMotor(i);
+        }
+    }
+    inFunc=false;
+  }
+}
+
+//Brakes the motors
+void brake(){
+  if(master.get_digital_new_press(brake_button)){
+    driveLeftFront.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
+    driveLeftBack.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
+    driveRightFront.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
+    driveRightBack.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
+  }
+}
+
 //DRIVER CONTROL (DEFINION)
 void controlSetDrive(){
   int drivePower = master.get_analog(ANALOG_RIGHT_Y);
