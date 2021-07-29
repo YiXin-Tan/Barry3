@@ -26,12 +26,12 @@ extern pros::ADIDigitalIn button;
 #define MTR_MINI_LIFT_PORT 12
 #define SENSOR_POTENTIOMETER_PORT 'A'
 #define SENSOR_BUTTON_PORT 'C'
-#define toggle_Lift_Button DIGITAL_R1
-#define toggle_MiniLift_Button DIGITAL_L1
-#define toggle_control_button DIGITAL_Y
-#define brake_button DIGITAL_X
-#define incrementSensButton DIGITAL_R2
-#define decrementSensButton DIGITAL_L2
+#define TOGGLE_LIFT_BUTTON DIGITAL_R1
+#define TOGGLE_MINI_LIFT_BUTTON DIGITAL_L1
+#define INCREMENT_SENSITIVITY_BUTTON DIGITAL_R2
+#define DECREMENT_SENSITIVITY_BUTTON DIGITAL_L2
+#define TOGGLE_CONTROL DIGITAL_Y
+#define BRAKE_BUTTON DIGITAL_X
 
 extern int lift_state;
 extern int mini_lift_state;
