@@ -12,7 +12,7 @@ void setMiniLiftMotor(int distance){
 
 //CONTROL FUNCTION
 int controlSetLift(){
-  if (master.get_digital_new_press(toggle_Lift_Button)){
+  if (master.get_digital_new_press(TOGGLE_LIFT_BUTTON)){
     lift_state = -lift_state;
     setLiftMotor(lift_state * 100);
   }
@@ -22,7 +22,7 @@ int controlSetLift(){
 }
 
 int controlSetMiniLift(){
-  if (master.get_digital_new_press(toggle_MiniLift_Button)){
+  if (master.get_digital_new_press(TOGGLE_MINI_LIFT_BUTTON)){
     mini_lift_state = -mini_lift_state;
     setMiniLiftMotor(mini_lift_state * 100);
   }
