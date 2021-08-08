@@ -12,7 +12,7 @@ void controlSetDrive2();
 //ACCELERATION & BREAK(DECLARATION)
 void accelerate(int targetPower, int turn);
 void accelerate2(int targetPower, int currentPower,int lr);
-void brake();
+int brake();
 
 
 //AUTONOMOUS CONTROL (DECLARATION)

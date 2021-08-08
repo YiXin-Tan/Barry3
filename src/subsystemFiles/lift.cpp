@@ -12,11 +12,17 @@ void setMiniLiftMotor(int distance){
 
 //CONTROL FUNCTION
 int controlSetLift(){
-  if (master.get_digital_new_press(TOGGLE_LIFT_BUTTON)){
-    lift_state = -lift_state;
-    setLiftMotor(lift_state * 100);
+  if (master.get_digital(LIFT_UP_BUTTON) && lift.get_position() < 1200){
+    lift.move(70);
   }
-  return lift_state;
+  else if (master.get_digital(LIFT_DOWN_BUTTON) && lift.get_position() > 0){
+    lift.move(-15);
+  }
+  else{
+    lift.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
+    lift.move_velocity(0);
+  }
+  return lift.get_position();
   //int p = 127 * (master.get_digital(DIGITAL_L1) - master.get_digital(DIGITAL_L2));
   //setLiftMotor(p);
 }

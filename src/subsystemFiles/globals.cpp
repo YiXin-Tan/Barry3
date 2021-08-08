@@ -17,8 +17,10 @@ pros::Controller master(pros::E_CONTROLLER_MASTER);
 pros::ADIPotentiometer potentiometer(SENSOR_POTENTIOMETER_PORT);
 pros::ADIDigitalIn button(SENSOR_BUTTON_PORT);
 
+int brake_state = -1;
 int lift_state = -1;
 int mini_lift_state = -1;
-bool inFunc=false;
-int sensitivity=10;
+// bool inFunc=false;
+// int sensitivity=10;
+int control_cap = 127;
 int controlState=1;
